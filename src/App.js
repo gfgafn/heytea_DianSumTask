@@ -2,16 +2,15 @@
 import React, { Component } from 'react'
 import {Redirect, Route, Switch } from 'react-router-dom'
 import Tabbar from './components/Tabbar'
-// import MyNavLink from './components/MyNavLink'
 import Home from './pages/Home'
 import Index from './pages/Index'
 import Mart from './pages/Mart'	
 import Order from './pages/Order'			
 import Mine from './pages/Mine'
-import './App.css';
 import Login from './pages/Login'
 import Registered from './pages/Registered'
 import RegistrationTerms from './pages/Registered/RegistrationTerms'
+import './App.css';
 export default class App extends Component {
 	render() {
 		return (
