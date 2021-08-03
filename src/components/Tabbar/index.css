@@ -1,0 +1,49 @@
+/* 底部导航栏 */
+.tabbar { 
+    position:fixed; 
+    left:0px; 
+    bottom:0px;  
+    width:100%; 
+    height: 50px; /* 设定底部导航栏高度 */
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; 
+    z-index:999;
+}
+.tabbar ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;/*消除小圆点*/
+}
+.tabbar ul li {
+    float: left;
+    width: 20%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.tabbar ul li a {
+    font-size: 13px;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+}
+.tabbar ul li img {
+    float: left;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    /* background-color: #ef4c4c; */
+    margin-left: 30%;
+    /* margin-top: 1px; */
+}
+.tabbar ul li a p {
+    margin-top: 31px;
+    color: #bebdbb;
+    /* margin-tabbar: 5px; */
+    text-align: center;
+}
+.tabbarCurrent {
+    color: #343434;
+}

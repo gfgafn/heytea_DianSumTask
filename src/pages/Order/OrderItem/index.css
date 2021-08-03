@@ -1,0 +1,103 @@
+.oredrItem {
+    width: 100%;
+    height: 180px;
+    background-color: rgb(255, 255, 255);
+}
+.oredrItem ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 33.3%;
+    /* background-color: rgb(108, 202, 32); */
+}
+.oredrItem ul li {
+    float: left;
+    height: 100%;
+    /* width: 50%; */
+    /* background-color: rgb(207, 75, 75); */
+}
+.oredrItem ul:nth-child(1) li:nth-child(1) {
+    width: 80%;
+    height: 100%;
+    text-align: left;
+    /* background-color: rgb(18, 115, 194); */
+}
+.oredrItem ul:nth-child(1) li:nth-child(2) {
+    width: 20%;
+    height: 100%;
+    text-align: left;
+    /* background-color: rgb(153, 41, 41); */
+}
+.oredrItem ul:nth-child(2) li:nth-child(1) {
+    width: 80%;
+    height: 100%;
+    text-align: left;
+}
+.oredrItem ul:nth-child(2) li:nth-child(2) {
+    width: 20%;
+    height: 100%;
+    text-align: left;
+}
+.oredrItem ul li p {
+    margin: 0;
+}
+.oredrItem ul li p:nth-child(2) {
+    color: gray;
+}
+.oredrItem ul:nth-child(1) li:nth-child(1) p {
+    margin-left: 10px;
+}
+/* .oredrItem ul:nth-child(1) li:nth-child(2) span {
+    margin-top: -5px;
+} */
+.oredrItem ul:nth-child(2) li:nth-child(2) p:nth-child(1) {
+    font-size: 18px;
+    font-weight: 700;
+}
+.oredrItem ul:nth-child(2) li:nth-child(2) p:nth-child(2) {
+    font-size: 12px;
+}
+.oredrItem ul li:nth-child(2) img {
+    /* margin-top: 2px; */
+    width: 21%;
+}
+.oredrItem ul:nth-child(2) img {
+    width: 20%;
+}
+.oredrItem ul:nth-child(2) img:nth-child(1) {
+    margin-left: 10px;
+}
+.oredrItem ul:nth-child(3) li {
+    width: 100%;
+    height: 100%;
+    /* padding-left: 10px; */
+    /* padding-top: 5%; */
+}
+.oredrItem ul:nth-child(3) li div {
+    position: absolute;
+    margin-top: 3.5%;
+    border-width: 1px;
+    border-style:solid; 
+    width: 22%;
+    height: 25px;
+    /* border-color: rgb(179, 64, 64); */
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    /* margin-bottom: 5%; */
+}
+.oredrItem ul:nth-child(3) li div {
+    padding-top: 5px;
+}
+.oredrItem ul:nth-child(3) li div:nth-child(1){
+    margin-left: 45%;
+    border-color:rgb(180, 180, 180);
+}
+.oredrItem ul:nth-child(3) li div:nth-child(2){
+    margin-left: 71%;
+    /* color: #e8cc9c; */
+    border-color:#e8cc9c;
+}
+.oredrItem ul:nth-child(3) li div:nth-child(2) a {
+    color: #e8cc9c;
+}

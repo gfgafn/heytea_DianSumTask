@@ -1,0 +1,54 @@
+/* -------------------轮播图--------------------- */
+.slideShow {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* height: 60vw; */
+    /* background-color: #f0f0f0; */
+    padding: 0;
+    margin: 0;
+}
+.slideShow img {
+    width: 100%;
+    float: left;
+}
+.slideShow ul {
+    overflow: hidden;
+    width: 500%;
+    /* height: 225.11px; */
+    margin: 0;
+    padding: 0;
+    margin-left: -100%;
+}
+.slideShow ul li {
+    float: left;
+    width: 20%;
+    list-style: none;/*消除小圆点*/
+    margin: 0;
+}
+
+.slideShow ol {
+    position: relative;
+    width: 100%;
+    /* bottom: 7.5px; */
+    /* right: 44%; */
+    /* margin: 0; */
+    margin-top: -7%;
+    padding-left: 41%;
+    /* text-align: center; */
+}
+.slideShow ol li {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: 10px;
+    background-color: #fff;
+    list-style: none;/* 去掉序号 */
+    border-radius: 3px;
+    transition: all .3s;
+}
+.slideShow ol li.current {
+    width: 12px;
+    /* height: 8px;
+    border-radius: 50%; */
+}

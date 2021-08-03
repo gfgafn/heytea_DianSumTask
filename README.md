@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# 说明
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### public ---- 静态资源文件夹
 
-## Available Scripts
+​            favicon.icon ------ 网站页签图标
 
-In the project directory, you can run:
+​            **index.html --------** **主页面**
 
-### `npm start`
+​            logo192.png ------- logo图
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+​            logo512.png ------- logo图
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+​            manifest.json ----- 应用加壳的配置文件
 
-### `npm test`
+​            robots.txt -------- 爬虫协议文件
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### src ---- 源码文件夹
 
-### `npm run build`
+​            App.css -------- App组件的样式
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+​            **App.js --------- App组件**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+​            App.test.js ---- 用于给App做测试
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+​            index.css ------ 样式
 
-### `npm run eject`
+​            **index.js -------** **入口文件**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+​            logo.svg ------- logo图
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+​            reportWebVitals.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+​                    --- 页面性能分析文件(需要web-vitals库的支持)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+​            setupTests.js
 
-## Learn More
+​                    ---- 组件单元测试的文件(需要jest-dom库的支持)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### src/components----一般组件文件夹
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+MyNavLink----封装链接样式
 
-### Code Splitting
+ReplaceTabbar----代替底部导航栏原来的位置，以便其他展示页面不被底部导航栏遮挡
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Slideshow----轮播图组件
 
-### Analyzing the Bundle Size
+Tabbar----底部导航栏组件
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### src/pages----路由组件文件夹
 
-### Making a Progressive Web App
+Home----首页组件
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Index----点单组件
 
-### Advanced Configuration
+Index/CommodityDetail----单个商品信息组件
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Login----登录组件
 
-### Deployment
+Mart----百货组件
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Mine----我的组件
 
-### `npm run build` fails to minify
+Order----订单组件
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Order/CurrentOrder----当前订单组件
+
+OrderHistoricalOrder----历史订单组件
+
+Order/OrderItem----单个订单信息组件
+
+Registered----注册组件
+
+Registered/RegistrationTerms----注册条款展示组件
+
+
+
+
+
