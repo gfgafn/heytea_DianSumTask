@@ -1,6 +1,4 @@
 # 说明
-由于git操作不熟练，新建了一个库  
-heytea和react-staging也是不属于这个项目的文件
 
 ### public ---- 静态资源文件夹
 
@@ -66,15 +64,10 @@ Order----订单组件
 
 Order/CurrentOrder----当前订单组件
 
-OrderHistoricalOrder----历史订单组件
+Order/HistoricalOrder----历史订单组件
 
 Order/OrderItem----单个订单信息组件
 
 Registered----注册组件
 
 Registered/RegistrationTerms----注册条款展示组件
-
-
-
-
-
