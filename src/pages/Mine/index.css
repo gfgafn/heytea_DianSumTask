@@ -58,7 +58,13 @@
 }
 .account ul:nth-child(1) li:nth-child(1) p:nth-child(1) {
     font-size: 20px;
-    margin-top: 20%;
+    margin-top: 0%;
+    font-weight: 700;
+    color: #343434;
+}
+.account ul:nth-child(1) li:nth-child(1) p:nth-child(2) {
+    font-size: 20px;
+    margin-top: 0%;
     font-weight: 700;
     color: #343434;
 }
@@ -74,6 +80,7 @@
     color: #fff;
     background-color: #393a3c;
 }
+
 /* ---------账号栏图标下文字--------- */
 .account ul:nth-child(2) {
     width: 100%;

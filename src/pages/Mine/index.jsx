@@ -1,70 +1,93 @@
 import React, { Component } from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import ReplaceTabbar from '../../components/ReplaceTabbar'
+import { userInfo } from '../../http/api'
 import './index.css'
 export default class Mine extends Component {
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         token: localStorage.getItem('token'),
+    //         Authorization: 'JWT' + localStorage.getItem('token')
+    //     }
+    // }
+    
+    getUserInfo() {
+        const user = {
+            username:'',
+            avator:''                        
+        }
+        let headers = {}
+        userInfo(headers).then(res => {
+            user.username = res.data.username
+            user.avator = res.data.img
+        })
+    }
     render() {
+
+
         return (
             <div>
                 {/* 头图 */}
-                <div className="focus">
-                    <img src="../img/my/me-focus.png" alt=""/>
+                <div className="focus" >
+                    <img src="../img/my/me-focus.png" alt="" />
                 </div>
                 {/* <!----------------- 账号相关 --------------------------> */}
-                <div className="account">
+                <div className="account" >
                     <ul>
                         <li>
-                        <p>Go会员</p>
-                        <NavLink to="/login"><p>点击登录</p></NavLink>
+                            <p>昵称</p>
+                            <p>Go会员</p>
+                            <NavLink to="/login"><p>点击登录</p></NavLink>
                         </li>
-                        <li ><img src="../img/my/me_icon_head.png" alt=""/></li>
+                        <li ><img src="../img/my/me_icon_head.png" alt="" /></li>
                     </ul>
                     <ul>
                         <li>
-                            <img src="../img/my/me_icon_points.png" alt=""/>
-                                <p>234</p>
-                                <p>积分商城</p>
+                            <img src="../img/my/me_icon_points.png" alt="" />
+                            <p>234</p>
+                            <p>积分商城</p>
                         </li>
                         <li>
-                            <img src="../img/my/me_icon_quan.png" alt=""/>
-                                <p>0</p>
-                                <p>喜茶券</p>
+                            <img src="../img/my/me_icon_quan.png" alt="" />
+                            <p>0</p>
+                            <p>喜茶券</p>
                         </li>
                         <li>
-                            <img src="../img/my/me_icon_wallet.png" alt=""/>
+                            <img src="../img/my/me_icon_wallet.png" alt="" />
                             <p>0</p>
                             <p>钱包</p>
                         </li>
                         <li>
-                            <img src="../img/my/me_icon_gift_card.png" alt=""/>
+                            <img src="../img/my/me_icon_gift_card.png" alt="" />
                             <p>0</p>
                             <p>阿喜有礼</p>
                         </li>
                     </ul>
                 </div>
                 {/* <!-------------------- 任务中心 -------------------------> */}
-                <div className="mission">
+                <div className="mission" >
                     <ul>
                         <li>
-                            <p>任务中心</p>  
-                            <p>MISSION CENTER</p>  
+                            <p>任务中心</p>
+                            <p>MISSION CENTER</p>
                         </li>
                         <li>
-                            <img src="../img/my/mission.png" alt=""/>
+                            <img src="../img/my/mission.png" alt="" />
                         </li>
                     </ul>
                 </div>
                 {/* <!-------------- 菜单 ---------------------------------> */}
-                <div className="mymenu">
+                <div className="mymenu" >
                     <ul>
                         <li>
-                            <NavLink to="/mine/membershipCode"><p  name="MembershipCode">会员码</p></NavLink>
+                            <NavLink to="/mine/membershipCode"><p name="MembershipCode">会员码</p></NavLink>
                         </li>
                         <li>
                             <p name="MembershipCode">门店积分扫码、喜茶钱包和阿喜有礼支付</p>
                         </li>
                         <li>
-                            <img src="../img/my/icon_arrow.png" alt="" name="MembershipCode"/>
+                            <img src="../img/my/icon_arrow.png" alt="" name="MembershipCode" />
                         </li>
                     </ul>
                     <ul>
@@ -75,7 +98,7 @@ export default class Mine extends Component {
                             <p>兑换星球会员、喜茶券和和阿喜有礼</p>
                         </li>
                         <li>
-                            <img src="../img/my/icon_arrow.png" alt=""/>
+                            <img src="../img/my/icon_arrow.png" alt="" />
                         </li>
                     </ul>
                     <ul>
@@ -86,7 +109,7 @@ export default class Mine extends Component {
                             <p></p>
                         </li>
                         <li>
-                            <img src="../img/my/icon_arrow.png" alt=""/>
+                            <img src="../img/my/icon_arrow.png" alt="" />
                         </li>
                     </ul>
                     <ul>
@@ -97,7 +120,7 @@ export default class Mine extends Component {
                             <p></p>
                         </li>
                         <li>
-                            <img src="../img/my/icon_arrow.png" alt=""/>
+                            <img src="../img/my/icon_arrow.png" alt="" />
                         </li>
                     </ul>
                     <ul>
@@ -108,7 +131,7 @@ export default class Mine extends Component {
                             <p></p>
                         </li>
                         <li>
-                            <img src="../img/my/icon_arrow.png" alt=""/>
+                            <img src="../img/my/icon_arrow.png" alt="" />
                         </li>
                     </ul>
                     <ul>
@@ -119,7 +142,7 @@ export default class Mine extends Component {
                             <p></p>
                         </li>
                         <li>
-                            <img src="../img/my/icon_arrow.png" alt=""/>
+                            <img src="../img/my/icon_arrow.png" alt="" />
                         </li>
                     </ul>
                     <ul>
@@ -130,7 +153,7 @@ export default class Mine extends Component {
                             <p></p>
                         </li>
                         <li>
-                            <img src="../img/my/icon_arrow.png" alt=""/>
+                            <img src="../img/my/icon_arrow.png" alt="" />
                         </li>
                     </ul>
                     <ul>
@@ -141,11 +164,11 @@ export default class Mine extends Component {
                             <p></p>
                         </li>
                         <li>
-                            <img src="../img/my/icon_arrow.png" alt=""/>
+                            <img src="../img/my/icon_arrow.png" alt="" />
                         </li>
                     </ul>
                 </div>
-                <ReplaceTabbar/>
+                <ReplaceTabbar />
             </div>
         )
     }
