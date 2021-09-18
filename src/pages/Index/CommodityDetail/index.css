@@ -69,7 +69,8 @@
     font-size: 16px;
     /* background-color: rgb(238, 20, 20); */
 }
-/* 选规格 */
+
+/* 选规格按钮 */
 .commodityDetail ul:nth-child(2) li:nth-child(4) a div:nth-child(1) {
     margin-left: 15%;
     text-align: center;
@@ -78,4 +79,172 @@
     color: #f2f2f2;
     border-radius: 10px;
     background-color: #daa770;
+}
+
+
+/* 商品具体配置选购弹出窗口页面,包括黑色半透明边框和中心白色卡片 */
+.configurationPurchase {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-left: -25%;
+    top: 0;
+    /* margin-top: -150%; */
+    z-index: 1000;
+    background-color: #4c4c4cea;
+    visibility: hidden;
+}
+.configurationPurchase.active {
+    visibility: visible;
+}
+.configurationPurchase ul {
+    /* width: 100%; */
+    list-style: none;/*消除小圆点*/
+    margin: 0;
+    padding: 0;
+}
+
+/* 商品具体配置选购弹出窗口卡片 */
+.configPurchaseCard {
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    margin-top: 20%;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.configPurchaseCard div:nth-child(1) {
+    z-index: 1000;
+    height: 82%;
+    border-radius: 10px 10px 0 0;
+    /* 由浏览器定夺，如果内容被修剪，就会显示滚动条 */
+    overflow: auto;
+}
+/* 分享和退出按钮 */
+.configPurchaseCard div:nth-child(1) ul li:nth-child(1) img {
+    position: absolute;
+    width: 7%;
+    margin-top: 3%;
+    z-index: 1000;
+}
+.configPurchaseCard div:nth-child(1) ul li:nth-child(1) img:nth-child(1) {
+    margin-left: 60%;
+}
+.configPurchaseCard div:nth-child(1) ul li:nth-child(1) img:nth-child(2) {
+    margin-left: 70%;
+}
+/* 商品图片轮播图 */
+.configPurchaseCard div:nth-child(1) ul li:nth-child(2) img {
+    width: 100%;
+}
+/* 食品标题 */
+.configPurchaseCard div:nth-child(1) ul li:nth-child(3) {
+    width: 90%;
+    font-size: 18px;
+    margin-left: 7%;
+}
+/* 食品具体描述 */
+.configPurchaseCard div:nth-child(1) ul li:nth-child(4) {
+    width: 90%;
+    margin-left: 7%;
+    font-size: 13px;
+    color: #999999;
+}
+/* 具体配置展示及选择 */
+.configPurchaseCard div:nth-child(1) ul:nth-child(n+2) {
+    margin: 5% 0;
+}
+.configPurchaseCard div:nth-child(1) ul:nth-child(n+2) li:nth-child(1) {
+    margin-left: 7%;
+    color: #898989;
+    font-size: 16px;
+}
+.configPurchaseCard div:nth-child(1) ul:nth-child(n+2) li:nth-child(2) {
+    margin-left: 7%;
+    height: 90%;
+}
+.configPurchaseCard div:nth-child(1) span {
+    display: inline-block;
+    padding: 2% 5%;
+    margin: 3% 5% 0 0;
+    border-radius: 3px;
+    color: #5e5e5e;
+    background-color: #f5f5f7;
+}
+.configPurchaseCard div:nth-child(1) span.active {
+    color: #ce9d65;
+    background-color: #f8eee4;
+} 
+
+/* 固定在卡片底部的价格展示、加入购物袋以及数量增减区域 */
+.configPurchaseCard div:nth-child(2) {
+    position: relative;
+    height: 18%;
+    border-radius: 0 0 10px 10px;
+    background-color: rgb(240, 49, 49);
+}
+.configPurchaseCard div:nth-child(2) ul:nth-child(1) {
+    float: left;
+    width: 70%;
+    height: 60%;
+}
+
+/* 所选择的要加入购物袋的商品的总价钱显示区域 */
+.configPurchaseCard div:nth-child(2) ul:nth-child(1) li:nth-child(1) {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 10%;
+    color: #e4a567;
+}
+
+/* 所选择的要加入购物袋的商品的各项配置汇总区域 */
+.configPurchaseCard div:nth-child(2) ul:nth-child(1) li:nth-child(2) {
+    font-size: 12px;
+    color: #999999;
+    margin-left: 10%;
+} 
+
+/* 数量按钮增减区域 */
+.configPurchaseCard div:nth-child(2) ul:nth-child(2) {
+    float: left;
+    width: 30%;
+    height: 60%;
+}
+.configPurchaseCard div:nth-child(2) ul:nth-child(2) li {
+    font-size: 16px;
+    /* height: 80%; */
+    margin-top: 14%;
+}
+/* 数量增减按钮 */
+.configPurchaseCard div:nth-child(2) ul:nth-child(2) li img {
+    float: left;
+    width: 35%;
+}
+/* .configPurchaseCard div:nth-child(2) ul:nth-child(2) li img:nth-child(3) {
+    margin-right: 0;
+}  */
+.configPurchaseCard div:nth-child(2) ul:nth-child(2) li p{
+    position: relative;
+    float: left;
+    width: 20%;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* 加入购物袋按钮区域 */
+.configPurchaseCard div:nth-child(2) ul:nth-child(3) {
+    float: left;
+    width: 100%;
+    height: 40%;
+}
+.configPurchaseCard div:nth-child(2) ul:nth-child(3) li {
+    width: 90%;
+    height: 68%;
+    margin-left: 5%;
+    /* margin-top: 3%; */
+    padding-top: 2%;
+    border-radius: 20px;
+    background-color: #e4a567;
+    text-align: center;
 }
