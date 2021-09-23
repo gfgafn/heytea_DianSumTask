@@ -6,9 +6,9 @@ import Home from './pages/Home'
 import Index from './pages/Index'
 import Mart from './pages/Mart'	
 import Order from './pages/Order'			
-import Mine from './pages/Mine'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import Mine from './redux/containers/Mine'
+import Login from './redux/containers/Login'
+import Register from './redux/containers/Register'
 import RegistrationTerms from './pages/Register/RegistrationTerms'
 import './App.css';
 export default class App extends Component {

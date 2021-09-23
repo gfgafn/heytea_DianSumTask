@@ -61,9 +61,8 @@ export default class Index extends Component {
                 </div>
                 {/* ---------------右侧轮播图---------------- */}
                 <div className="slideshowIndex">
-                    {/* <div></div> */}
                     <Slideshow />
-                    <Slideshow />
+                    {/* <Slideshow /> */}
                 </div>
                 {/* ---------------右侧商品栏---------------- */}
                 <div className="commodity">
@@ -97,10 +96,8 @@ export default class Index extends Component {
                     <CommodityDetail />
                     <p id="gtky">共同抗疫</p>
                     <CommodityDetail />
-                    {/* <CommodityDetail /> */}
-                    {/* <li>每日鲜食</li> */}
                     <ReplaceTabbar />
-                </div>
+                </div>              
             </div>
         )
     }

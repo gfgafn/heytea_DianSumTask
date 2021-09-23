@@ -6,7 +6,7 @@ import round_close_btn from '../../../images/index/round_close_btn.png'
 import menupopup_btn_share_normal from '../../../images/index/menupopup_btn_share_normal.png'
 import num_decrease from '../../../images/index/num_decrease.png'
 import num_increase from '../../../images/index/num_increase.png'
-import { getAllTea, getTeaInfo_tags, getTeainfoBbyTag } from '../../../http/api'
+import { getAllTea, getTeaInfo_tags, getTeainfoByTag } from '../../../http/api'
 import './index.css'
 
 export default class CommodityDetail extends Component {
@@ -43,7 +43,7 @@ export default class CommodityDetail extends Component {
     
   
     getTeaInfo() {
-        getTeainfoBbyTag(this.state).then(res => {
+        getTeainfoByTag(this.state).then(res => {
             // getTeaInfo_tags().then(res => {
             console.log(res)
             console.log(res.data)
@@ -171,14 +171,14 @@ class ConfigPurchase extends Component {
     componentDidMount() {
         const configSpan = document.querySelectorAll('span');
         for (let i=0; i<configSpan.length; i++ ){
-            configSpan.item(i).onclick = function() {
+            configSpan.item(i).onclick = () => {
                 console.log(configSpan.item(i));
                 if(configSpan.item(i).className === 'active'){
                     configSpan.item(i).className = ''
                 } else {
                     configSpan.item(i).className = 'active'
                 }
-            }    
+            }
         }
     }
     numChange(flag) {

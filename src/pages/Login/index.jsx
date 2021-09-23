@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import { login, userInfo } from '../../http/api'
 import './index.css'
 export default class Login extends Component {
     constructor(props) {
@@ -10,34 +9,14 @@ export default class Login extends Component {
             password: ''
         }
     }
-    getUserInfo(headers) {
-        const user = {
-            username:'',
-            avator:''                        
+    componentDidUpdate() {
+        if(this.props.loginState.loginStatus){
+            this.props.history.push('/home')
         }
-        userInfo(headers).then(res => {
-            user.username = res.data.username
-            user.avator = res.data.img
-        })
-        console.log(user)
-    }
-    login() {
-        // console.log(this.state)
-        // $http.post('https://www.fastmock.site/mock/b51d52f417e389dc24af7a14eae70d5f/heytea/login',this.state).then(res=>{
-        // console.log(res)
-        login(this.state).then(res => {
-            // 请求成功，存储token并跳转到首页
-            localStorage.setItem('token', res.data)
-            let headers = {}
-            this.getUserInfo(headers)
-            // this.props.history.push('/home')
-        })
     }
     getValue(e, name) {
-        // console.log(e.target.value)
         let data = {}
         data[name] = e.target.value
-        // console.log(data)
         this.setState(data)
     }
     render() {
@@ -51,7 +30,8 @@ export default class Login extends Component {
                                 name="username"
                                 id="user_name"
                                 placeholder="请输入用户名"
-                                onChange={(e) => { this.getValue(e, 'username') }} />
+                                onChange={(e) => { this.getValue(e, 'username') }} 
+                            />
                         </li>
                     </ul>
                     <ul>
@@ -60,7 +40,8 @@ export default class Login extends Component {
                                 type="password"
                                 name="password"
                                 placeholder="请输入密码"
-                                onChange={(e) => { this.getValue(e, 'password') }} />
+                                onChange={(e) => { this.getValue(e, 'password') }} 
+                            />
                         </li>
                     </ul>
                     {/* <ul>
@@ -68,10 +49,12 @@ export default class Login extends Component {
                         <li><input type="file" id="avator" /></li>
                     </ul> */}
                     <ul>
-                        <li><input
-                            type="button"
-                            value="登录"
-                            onClick={() => { this.login() }} />
+                        <li>
+                            <input
+                                type="button"
+                                value="登录"
+                                onClick={() => { this.props.login(this.state) }}
+                            />
                         </li>
                     </ul>
                     <ul>

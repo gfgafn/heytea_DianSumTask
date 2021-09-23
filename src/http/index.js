@@ -12,10 +12,10 @@ const $http = axios.create({
 
 // 请求拦截
 $http.interceptors.request.use(config => {
-    console.log(config)
+    console.log('Axios-http中的config', config)
     switch (config.url) {
-        case '/login'||'/teainfo_all':
-            config.headers.token = localStorage.getItem('token')        
+        case '/login' || '/teainfo_all':
+            // config.headers.token = localStorage.getItem('token')        
             break;
         case '/user':
             config.headers = {
@@ -23,7 +23,7 @@ $http.interceptors.request.use(config => {
                 'Authorization': 'JWT ' + localStorage.getItem('token')
             }
             break;
-        case 'teainfo_bytag':
+        case '/teainfo_bytag':
             
             break;
         default:
@@ -36,21 +36,21 @@ $http.interceptors.request.use(config => {
 })
 
 // 响应拦截
-$http.interceptors.response.use(res => {
-    let dataFromBackstage = res.data
-    console.log(dataFromBackstage)
-    if (dataFromBackstage.status) {
+$http.interceptors.response.use(response => {
+    let {data} = response
+    console.log('Axios-http中的respone', response)
+    console.log('Axios-http中的response.data', data)
+    if (data.status || data.code === 200) {
         // console.log(dataFromBackstage.data)
-
-        return dataFromBackstage
+        // 没有修改接口之前
+        localStorage.setItem('token', data.data)
+        // 修改接口之后应该的方式
+        // localStorage.setItem('token', data.data.token)
+        return data
     } else {
-        return Promise.reject(dataFromBackstage)
+        // Promise.reject(data)
+        return data
     }
-    // if (dataFromBackstage.code === 200) {
-    //     return dataFromBackstage.data
-    // } else {
-    //     return Promise.reject(dataFromBackstage)
-    // }
 })
 
 export default $http

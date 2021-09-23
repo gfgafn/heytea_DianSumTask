@@ -1,31 +1,15 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import ReplaceTabbar from '../../components/ReplaceTabbar'
-import { userInfo } from '../../http/api'
 import './index.css'
 export default class Mine extends Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         token: localStorage.getItem('token'),
-    //         Authorization: 'JWT' + localStorage.getItem('token')
-    //     }
-    // }
-    
-    getUserInfo() {
-        const user = {
-            username:'',
-            avator:''                        
-        }
-        let headers = {}
-        userInfo(headers).then(res => {
-            user.username = res.data.username
-            user.avator = res.data.img
-        })
+    componentDidMount(){
+        this.props.showUserInfo()
+        console.log('Mine组件加载完成后接收到的props是',this.props)
+        // console.log(this.props.userInfo.username)
     }
     render() {
-
-
+        const {username} = this.props.userInfo
         return (
             <div>
                 {/* 头图 */}
@@ -36,7 +20,7 @@ export default class Mine extends Component {
                 <div className="account" >
                     <ul>
                         <li>
-                            <p>昵称</p>
+                            <p>{username}</p>
                             <p>Go会员</p>
                             <NavLink to="/login"><p>点击登录</p></NavLink>
                         </li>

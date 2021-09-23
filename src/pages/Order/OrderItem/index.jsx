@@ -7,7 +7,6 @@ import { NavLink } from 'react-router-dom'
 export default class OredrItem extends Component {
     render() {
         return (
-            <div>
                 <div className="oredrItem">
                     <ul>
                         <li>
@@ -37,7 +36,6 @@ export default class OredrItem extends Component {
                         </li>
                     </ul>
                 </div>
-            </div>
         )
     }
 }

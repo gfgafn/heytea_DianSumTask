@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { register } from '../../http/api'
-
 import './index.css'
 export default class Register extends Component {
     constructor(props) {
@@ -11,65 +9,51 @@ export default class Register extends Component {
             password: '',
             passwordSec: ''
         }
-
     }
-    register() {
-        this.verifyPassword();
-        // console.log(this.state)
-        // axios.post('https://www.fastmock.site/mock/b51d52f417e389dc24af7a14eae70d5f/heytea/login',this.state).then(res=>{
-        // register(this.state).then(res => {
-            // let dataFromBackstage = res.data;
-            // if(dataFromBackstage.code === 200) {
-            // localStorage.setItem('token',res.token)
-            // }
-            // this.props.history.push('/login')
-        // })
+    componentDidUpdate() {
+        if(this.props.registerState.registerStatus){
+            this.props.history.push('/login')
+        }
     }
-    // 获得input输入框中的值
     getValue(e, name) {
-        // console.log(e.target.value)
         let data = {}
         data[name] = e.target.value
-        // console.log(data)
         this.setState(data)
     }
-    // 检验确认密码是否与第一次输入的密码一致
-    verifyPassword() {
-        var reg = /^1[0-9]{10}$/;
-        // 检察电话号码格式是否正确
-        if(reg.test(this.state.phonenum)) {
-            // 检察两次输入的密码是否相等
-            if (this.state.password === this.state.passwordSec) {
-                let dataPassToBackstage = {
-                    phonenum: '',
-                    username: '',
-                    password: ''
+    checkFormat(data) {
+        let reg = /^1[0-9]{10}$/;
+        if(reg.test(data.phonenum)) {
+            if (data.password === data.passwordSec) {
+                let formData = {
+                    phonenum: data.phonenum,
+                    username: data.username,
+                    password: data.password
                 }
-                dataPassToBackstage.phonenum = this.state.phonenum;
-                dataPassToBackstage.username = this.state.username;
-                dataPassToBackstage.password = this.state.password;
-                console.log(dataPassToBackstage);
-                // 发送请求并检查返回的数据
-                register(dataPassToBackstage).then(res => {
-                // let dataFromBackstage = res.data;
-                // if(dataFromBackstage.code === 200) {
-                // localStorage.setItem('token',res.token)
-                // }
-                // 若返回数据正确则跳转到登录页面
-                this.props.history.push('/login')
-            })
-            console.log('success')
+                // console.log('success输入的号码格式正确且两次密码一致')
+                return formData
             } else {
-                console.log('failed')
+                // console.log('failed输入的号码格式正确但两次密码不一致')
+                return false
             }
         }else {
-            console.log('格式错误')
+            // console.log('电话号码格式错误')
+            return false
         }     
     }
+    register() {
+        console.log("register")
+        let registerFormdata = this.checkFormat(this.state)
+        if(registerFormdata){
+            this.props.register(registerFormdata)
+        }
+        console.log(registerFormdata)
+    }
+
     render() {
+        console.log('render方法调运时', this.state)
         return (
             <div className="signIn">
-                <form action="#" method="post" name="registered" >
+                <form action="#" method="post" name="registered" id="registerForm">
                     <ul>
                         <li><label><p>用户名</p>
                             <input
@@ -123,7 +107,6 @@ export default class Register extends Component {
                 </ul> */}
                 </form>
             </div>
-
         )
     }
 }
