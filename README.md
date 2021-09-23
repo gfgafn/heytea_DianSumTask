@@ -1,73 +1,80 @@
-# 说明
+# heytea项目说明
+Dian团队2021夏令营web方向前端任务，一个模仿喜茶小程序的单页面应用
 
-### public ---- 静态资源文件夹
+------
 
-​            favicon.icon ------ 网站页签图标
+[![](https://img.shields.io/badge/React-%5E17.0.2-blue)](https://www.npmjs.com/package/react) [![](https://img.shields.io/badge/axios-%5E0.21.1-blueviolet)](https://www.npmjs.com/package/axios) [![](https://img.shields.io/badge/qs-%5E6.10.1-green)](https://www.npmjs.com/package/qs) [![](https://img.shields.io/badge/react--redux-%5E7.2.5-orange)](https://www.npmjs.com/package/react-redux) [![](https://img.shields.io/badge/redux--thunk-%5E2.3.0-red)](https://www.npmjs.com/package/redux-thunk)
 
-​            **index.html --------** **主页面**
+## 目录
 
-​            logo192.png ------- logo图
+- [安装与启动](#安装与启动)
 
-​            logo512.png ------- logo图
+- [项目目录结构说明](#项目目录结构说明)
 
-​            manifest.json ----- 应用加壳的配置文件
+## 安装与启动
 
-​            robots.txt -------- 爬虫协议文件
+启动方式：
 
-### src ---- 源码文件夹
+打开终端，进入项目目录，运行以下命令(需要安装[Node.js](https://nodejs.org/en/))
 
-​            App.css -------- App组件的样式
+```
+npm start
+```
 
-​            **App.js --------- App组件**
+## 项目目录结构说明
 
-​            App.test.js ---- 用于给App做测试
-
-​            index.css ------ 样式
-
-​            **index.js -------** **入口文件**
-
-​            logo.svg ------- logo图
-
-​            reportWebVitals.js
-
-​                    --- 页面性能分析文件(需要web-vitals库的支持)
-
-​            setupTests.js
-
-​                    ---- 组件单元测试的文件(需要jest-dom库的支持)
-
-### src/components----一般组件文件夹
-
-MyNavLink----封装链接样式
-
-ReplaceTabbar----代替底部导航栏原来的位置，以便其他展示页面不被底部导航栏遮挡
-
-Slideshow----轮播图组件
-
-Tabbar----底部导航栏组件
-
-### src/pages----路由组件文件夹
-
-Home----首页组件
-
-Index----点单组件
-
-Index/CommodityDetail----单个商品信息组件
-
-Login----登录组件
-
-Mart----百货组件
-
-Mine----我的组件
-
-Order----订单组件
-
-Order/CurrentOrder----当前订单组件
-
-Order/HistoricalOrder----历史订单组件
-
-Order/OrderItem----单个订单信息组件
-
-Registered----注册组件
-
-Registered/RegistrationTerms----注册条款展示组件
+├─README.md
+├─public                               // 静态资源文件夹
+│  │  favicon.ico
+│  │  index.html
+│  │  logo192.png
+│  │  logo512.png
+│  │  manifest.json
+│  │  robots.txt
+│  └─img
+└─src                               		// 源码文件夹
+    │  App copy.js
+    │  App.css
+    │  App.js
+    │  App.test.js
+    │  index.css
+    │  index.js
+    │  reportWebVitals.js
+    │  setupTests.js  
+    ├─components                  // 一般组件文件夹
+    │  ├─MyNavLink
+    │  ├─ReplaceTabbar
+    │  ├─Slideshow
+    │  └─Tabbar
+    ├─http
+    ├─images
+    ├─pages                     // 路由组件文件夹
+    │  ├─Home
+    │  ├─Index
+    │  │  └─CommodityDetail
+    │  ├─Login
+    │  ├─Mart
+    │  ├─Mine
+    │  ├─Order
+    │  │  ├─CurrentOrder
+    │  │  ├─HistoricalOrder
+    │  │  └─OrderItem
+    │  └─Register
+    │      └─RegistrationTerms
+    └─redux
+        │  store.js
+        ├─actions
+        │  │  index.js  
+        │  ├─Login
+        │  ├─Mine
+        │  └─Register
+        ├─constants
+        ├─containers
+        │  ├─Login
+        │  ├─Mine
+        │  └─Register
+        └─reducers
+                index.js
+                login.js
+                mine.js
+                register.js

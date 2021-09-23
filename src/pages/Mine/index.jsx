@@ -5,8 +5,6 @@ import './index.css'
 export default class Mine extends Component {
     componentDidMount(){
         this.props.showUserInfo()
-        console.log('Mine组件加载完成后接收到的props是',this.props)
-        // console.log(this.props.userInfo.username)
     }
     render() {
         const {username} = this.props.userInfo
