@@ -7,11 +7,13 @@ Dian团队2021夏令营web方向前端任务，一个模仿喜茶小程序的单
 
 ## 目录
 
-- [安装与启动](#安装与启动)
+- [启动](#启动)
 
 - [项目目录结构说明](#项目目录结构说明)
 
-## 安装与启动
+
+
+## 启动
 
 启动方式：
 
@@ -21,60 +23,17 @@ Dian团队2021夏令营web方向前端任务，一个模仿喜茶小程序的单
 npm start
 ```
 
+
+
 ## 项目目录结构说明
 
-├─README.md
-├─public                               // 静态资源文件夹
-│  │  favicon.ico
-│  │  index.html
-│  │  logo192.png
-│  │  logo512.png
-│  │  manifest.json
-│  │  robots.txt
-│  └─img
-└─src                               		// 源码文件夹
-    │  App copy.js
-    │  App.css
-    │  App.js
-    │  App.test.js
-    │  index.css
-    │  index.js
-    │  reportWebVitals.js
-    │  setupTests.js  
-    ├─components                  // 一般组件文件夹
-    │  ├─MyNavLink
-    │  ├─ReplaceTabbar
-    │  ├─Slideshow
-    │  └─Tabbar
-    ├─http
-    ├─images
-    ├─pages                     // 路由组件文件夹
-    │  ├─Home
-    │  ├─Index
-    │  │  └─CommodityDetail
-    │  ├─Login
-    │  ├─Mart
-    │  ├─Mine
-    │  ├─Order
-    │  │  ├─CurrentOrder
-    │  │  ├─HistoricalOrder
-    │  │  └─OrderItem
-    │  └─Register
-    │      └─RegistrationTerms
-    └─redux
-        │  store.js
-        ├─actions
-        │  │  index.js  
-        │  ├─Login
-        │  ├─Mine
-        │  └─Register
-        ├─constants
-        ├─containers
-        │  ├─Login
-        │  ├─Mine
-        │  └─Register
-        └─reducers
-                index.js
-                login.js
-                mine.js
-                register.js
+```
+
+|—public                // 静态资源文件夹
+|—src                   // 源代码文件夹
+|—|-components          // 一般组件文件夹
+|—|—http                // API
+|—|-pages           	// 路由组件文件夹
+|—|—redux
+|—README.md
+```
